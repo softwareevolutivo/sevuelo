@@ -53,5 +53,21 @@ public class RequestResource {
         requestRepository.save(request);
     }
 
+    @PutMapping("/changeStatus")
+    public void changeStatus(@RequestBody Request request) {
+        log.debug("REST request to change atus a flight");
+        if (request.getStatus().equals(RequestStatus.RESERVED)) {
+            request.setStatus(RequestStatus.NEW);
+        } else if (request.getStatus().equals(RequestStatus.NEW)) {
+            request.setStatus(RequestStatus.RESERVED);
+        }
+        requestRepository.save(request);
+    }
 
+    @PostMapping("/deleteRequest")
+    public boolean deleteRequest(@RequestBody Request request) {
+        log.debug("REST delete to Request : {}", request);
+        requestRepository.delete(request);
+        return Boolean.TRUE;
+    }
 }

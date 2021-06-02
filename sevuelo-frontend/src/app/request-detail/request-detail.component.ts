@@ -10,7 +10,9 @@ import { RequestService } from '../request.service';
 })
 export class RequestDetailComponent implements OnInit {
 
-  @Input() request: Request;
+  @Input() request: Request = new Request();
+
+  valueButton = '';
 
   constructor(
     private requestService: RequestService,
@@ -34,10 +36,28 @@ export class RequestDetailComponent implements OnInit {
   reserve(): void {
     this.requestService.reserveRequest(this.request)
       .subscribe((newRequest) => {
-        this.request = newRequest
+        this.request = newRequest;
         this.previousState();
       }
     );
+  }
+
+  onChangeStatus(): void {
+    this.requestService.changeStatus(this.request)
+      .subscribe((newRequest) => {
+          this.request = newRequest;
+          this.previousState();
+        }
+      );
+  }
+
+  getValueButton(): string {
+    if (this.request['status'] === 'NEW'){
+      this.valueButton = 'Reserve';
+    } else if (this.request['status'] === 'RESERVE') {
+      this.valueButton = 'Reverse';
+    }
+    return this.valueButton;
   }
 
 }

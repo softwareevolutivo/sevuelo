@@ -23,7 +23,7 @@ export class RequestService {
     // return of(REQUESTS);
     return this.http.get<Request[]>(`${this.url}/requests`);
   }
-  
+
   getRequest(id: number): Observable<Request> {
     return this.http.get<Request>(`${this.url}/requests/${id}`);
   }
@@ -32,8 +32,15 @@ export class RequestService {
     return this.http.put(`${this.url}/reserve`, request, this.httpOptions);
   }
 
-  addRequest(request: Request): Observable<Request> {
-    return this.http.post<Request>(`${this.url}/requests`, request, this.httpOptions);
+  changeStatus(request: Request): Observable<any> {
+    return this.http.put(`${this.url}/changeStatus`, request, this.httpOptions);
   }
 
+  addRequest(request: Request): Observable<Request> {
+    return this.http.post<Request>(`${this.url}/requests`, request, this.httpOptions);
+  }//deleteRequest
+
+  deleteRequest(request: Request): Observable<any> {
+    return this.http.post<boolean>(`${this.url}/deleteRequest`, request, this.httpOptions);
+  }
 }

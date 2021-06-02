@@ -4,6 +4,8 @@ import ec.sevolutivo.sevuelos.sevuelos.domain.Request;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * Spring Data SQL repository for the Request entity.
  */
