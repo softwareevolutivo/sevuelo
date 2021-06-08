@@ -1,6 +1,9 @@
 package ec.sevolutivo.sevuelos.sevuelos.repository;
 
 import ec.sevolutivo.sevuelos.sevuelos.domain.Request;
+
+import java.util.List;
+
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 

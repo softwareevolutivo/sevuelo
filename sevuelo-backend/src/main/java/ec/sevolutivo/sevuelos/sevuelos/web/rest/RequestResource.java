@@ -52,6 +52,12 @@ public class RequestResource {
         request.setStatus(RequestStatus.RESERVED);
         requestRepository.save(request);
     }
+    @PutMapping("/cancel")
+    public void cancel(@RequestBody Request request) {
+        log.debug("REST request to cancel");
+        request.setStatus(RequestStatus.NEW);
+        requestRepository.save(request);
+    }
 
 
 }

@@ -30,6 +30,12 @@ public class Request implements Serializable {
     @Size(max = 100)
     @Column(name = "destination", length = 100, nullable = false)
     private String destination;
+    
+    @NotNull
+    @Size(max = 100)
+    @Column(name = "comment", length = 100, nullable = false)
+    private String comment;
+
 
     @NotNull
     @Enumerated(EnumType.STRING)
@@ -60,7 +66,15 @@ public class Request implements Serializable {
         this.destination = destination;
     }
 
-    public RequestStatus getStatus() {
+    public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
+	public RequestStatus getStatus() {
         return status;
     }
 

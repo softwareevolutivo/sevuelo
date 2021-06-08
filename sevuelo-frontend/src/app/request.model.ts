@@ -3,6 +3,7 @@ export class Request {
         id?: number,
         passenger?: string,
         destination?: string,
+        comment?: string,
         status?: string,
     ){}
     

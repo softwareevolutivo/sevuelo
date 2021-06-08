@@ -40,4 +40,13 @@ export class RequestDetailComponent implements OnInit {
     );
   }
 
+  cancel(): void {
+    this.requestService.cancelRequest(this.request)
+      .subscribe((newRequest) => {
+        this.request = newRequest
+        this.previousState();
+      }
+    );
+  }
+
 }

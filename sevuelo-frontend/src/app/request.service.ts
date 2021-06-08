@@ -31,6 +31,9 @@ export class RequestService {
   reserveRequest(request: Request): Observable<any> {
     return this.http.put(`${this.url}/reserve`, request, this.httpOptions);
   }
+  cancelRequest(request: Request): Observable<any> {
+    return this.http.put(`${this.url}/cancel`, request, this.httpOptions);
+  }
 
   addRequest(request: Request): Observable<Request> {
     return this.http.post<Request>(`${this.url}/requests`, request, this.httpOptions);
