@@ -61,7 +61,7 @@ public class PassengerServiceImpl implements PassengerService {
     //Actualizar
     @Override
     @Transactional
-    public PassengerDTO update(PassengerDTO passengerDTO, Long id) {
+    public PassengerDTO reserve(PassengerDTO passengerDTO, Long id) {
         Passenger passenger = passengerRepository.findById(id)
         .orElseThrow(()-> new ResourceNotFoundException("passenger not found"));
         passenger.setId(id);

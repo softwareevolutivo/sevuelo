@@ -34,7 +34,7 @@ public class PassengerController {
   
 
     //Crear
-    @PostMapping("/passenger")
+    @PostMapping("/requests")
     public ResponseEntity<PassengerDTO> create(@Valid @RequestBody NewPassenger passengerDTO) {
         PassengerDTO result=service.create(passengerDTO);
         
@@ -54,9 +54,9 @@ public class PassengerController {
         return ResponseEntity.ok().body(result);        
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<PassengerDTO> update(@PathVariable("id") Long id,@RequestBody PassengerDTO passengerDTO ){
-        PassengerDTO result = service.update(passengerDTO, id);
+    @PutMapping("/reserve")
+    public ResponseEntity<PassengerDTO> reserve(@PathVariable("id") Long id,@RequestBody PassengerDTO passengerDTO ){
+        PassengerDTO result = service.reserve(passengerDTO, id);
         return ResponseEntity.ok().body(result);
     }
 

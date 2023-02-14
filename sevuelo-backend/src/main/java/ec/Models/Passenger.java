@@ -21,11 +21,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.io.Serializable;
-import java.util.List;
-import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * A Request.
@@ -56,4 +52,9 @@ public class Passenger  {
     @Size(max = 100)
     @Column(name = "destination", length = 100, nullable = false)
     private String destination;
+
+    @NotNull
+    @Size(max = 100)
+    @Column(name = "comentario", length = 100, nullable = false)
+    private String comentario;
 }

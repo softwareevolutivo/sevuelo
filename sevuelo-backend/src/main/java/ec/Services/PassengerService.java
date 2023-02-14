@@ -9,7 +9,7 @@ public interface PassengerService {
 public PassengerDTO create(NewPassenger newPassanger);
 public List<PassengerDTO> list(); 
 public PassengerDTO retrieve (Long id);
-public PassengerDTO update (PassengerDTO passengerDTO, Long id);
+public PassengerDTO reserve (PassengerDTO passengerDTO, Long id);
 
     
 }

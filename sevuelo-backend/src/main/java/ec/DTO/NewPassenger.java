@@ -15,6 +15,7 @@ public class NewPassenger {
     private String passenger;
     private String destination;
     private PassengerStatus status;
+    private String comentario;
 
 
     
