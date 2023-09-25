@@ -4,7 +4,7 @@
 
 - Install and configure Git
 - Install Java 17 (or superior) and config JAVA_HOME environment variable
-- node.js version 16 and npm version 9
+- node.js version 18 and npm version 9
 
 ## Execute in DEV environment
 
