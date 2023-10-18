@@ -65,8 +65,6 @@ public class RequestResourceTest {
 
     @Test
     public void shouldGetAllRequests() throws Exception {
-
-        requestRepository.saveAndFlush(new Request());
         requestRepository.saveAndFlush(completeRequest);
 
         mockMvc.perform(get("/api/requests")
