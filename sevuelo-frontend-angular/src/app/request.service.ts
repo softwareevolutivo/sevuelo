@@ -28,7 +28,8 @@ export class RequestService {
     return this.http.get<Request>(`${this.url}/requests/${id}`);
   }
 
-  reserveRequest(request: Request): Observable<any> {
+  // reserveRequest(request: Request): Observable<any> {
+  reserveRequest(request: Request): Observable<Request> {
     return this.http.put(`${this.url}/reserve`, request, this.httpOptions);
   }
 
