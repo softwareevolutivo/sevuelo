@@ -1,1 +1,0 @@
-{"ast":null,"code":"export class Request {\n  constructor(id, passenger, destination, status) {}\n\n}","map":null,"metadata":{},"sourceType":"module"}
